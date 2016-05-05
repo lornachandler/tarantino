@@ -2,7 +2,7 @@ defmodule Tarantino.UserController do
   use Tarantino.Web, :controller
   alias Tarantino.User
 
-  plug :authenticate when action in [:index, :show]
+  plug :authenticate_user when action in [:index, :show]
 
   def index(conn, _params) do
     users = Repo.all(Tarantino.User)

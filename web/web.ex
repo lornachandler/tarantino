@@ -36,6 +36,7 @@ defmodule Tarantino.Web do
 
       import Tarantino.Router.Helpers
       import Tarantino.Gettext
+      import Tarantino.Auth, only: [authenticate_user: 2] # New import
     end
   end
 
@@ -58,6 +59,8 @@ defmodule Tarantino.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      import Tarantino.Auth, only: [authenticate_user: 2] # New import
     end
   end
 

@@ -26,4 +26,10 @@ defmodule Tarantino.Router do
   # scope "/api", Tarantino do
   #   pipe_through :api
   # end
+
+  scope "/manage", Tarantino do
+    pipe_through [:browser, :authenticate_user]
+
+    resources "/videos", VideoController
+  end
 end

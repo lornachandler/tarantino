@@ -7,10 +7,9 @@ defmodule Tarantino.Repo.Migrations.CreateVideo do
       add :title, :string
       add :description, :text
       add :user_id, references(:users, on_delete: :nothing)
-
       timestamps
     end
+    
     create index(:videos, [:user_id])
-
   end
 end
